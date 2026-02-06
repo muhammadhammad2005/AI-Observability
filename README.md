@@ -25,3 +25,11 @@ kubectl get nodes
 ```bash
 kubectl get pods -A
 ```
+## ⭐ 2. HONEYCOMB.IO ACCOUNT
+1. Go to: [**https://ui.honeycomb.io**](https://ui.honeycomb.io/)
+2. Sign up (Google or email)
+3. Create an **Environment**
+4. Go to **Settings → API Keys**
+5. Copy your **Team API Key**
+
+Dataset name we will use: **otel-demo**
