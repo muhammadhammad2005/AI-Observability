@@ -116,6 +116,7 @@ Open browser:
 http://localhost:8080
 ```
 You should see the OTEL demo storefront UI.
+<img width="1920" height="1080" alt="image5" src="https://github.com/user-attachments/assets/c95cfd33-cfbe-4a71-8a28-c14e8a950a3f" />
 
 ## ⭐ 7. CHECK HONEYCOMB DASHBOARD
 
