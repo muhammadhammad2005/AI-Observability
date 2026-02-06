@@ -194,17 +194,3 @@ Use these in **Copilot Chat inside VS Code**:
 2. Summarize anomalies in the last 30 minutes.
 3. Why is checkout slow today?
 4. Show me traces where frontend took more than 1 second.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
