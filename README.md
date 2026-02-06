@@ -91,6 +91,8 @@ Replace <YOUR_API_KEY> with your Honeycomb key.
 helm upgrade --install otel-demo open-telemetry/opentelemetry-demo \
   -n otel-demo -f values.yaml
 ```
+<img width="1920" height="1028" alt="image1" src="https://github.com/user-attachments/assets/b50b0ad8-852a-4f46-8124-1897cbc1d95b" />
+
 ### Verify pods
 ```bash
 kubectl get pods -n otel-demo
@@ -101,6 +103,9 @@ Look for:
 - cartservice
 - loadgenerator
 - otel-collector
+
+<img width="1920" height="1028" alt="image2" src="https://github.com/user-attachments/assets/60823f69-b506-4e00-8276-f7fd274baad4" />
+
 ## ⭐ 6. EXPLORE THE APP
 ### Port-forward frontend
 ```bash
@@ -124,6 +129,9 @@ You should see the OTEL demo storefront UI.
     - error rates
 
 Your collector is exporting correctly if you see fresh traces.
+
+<img width="1920" height="1080" alt="image6" src="https://github.com/user-attachments/assets/24bbe843-7653-419c-8f94-af055f8c2550" />
+<img width="1920" height="1080" alt="image7" src="https://github.com/user-attachments/assets/b5548b8f-09be-4dd0-bb10-8d7d89f9054f" />
 
 ## ⭐ 8. SET UP HONEYCOMB MCP IN VS CODE
 
