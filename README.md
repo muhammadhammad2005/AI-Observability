@@ -125,6 +125,74 @@ You should see the OTEL demo storefront UI.
 
 Your collector is exporting correctly if you see fresh traces.
 
+## ⭐ 8. SET UP HONEYCOMB MCP IN VS CODE
+
+### Step 1 — Open VS Code Settings
+
+Search: **Model Context Protocol**
+### Step 2 — Add Honeycomb MCP server config
+
+Add in your VS Code’s MCP servers:
+```bash
+{
+  "servers": {
+    "honeycomb": {
+      "url": "https://mcp.honeycomb.io/mcp",
+      "type": "http"
+    }
+  },
+  "inputs": []
+}
+```
+### Step 3 — Restart VS-Code
+
+### Step 4 — OAuth Login
+
+VS Code will pop up a browser:
+
+- Log into Honeycomb
+- Click **Allow**
+
+Now VS Code Copilot Chat can query your Honeycomb data directly.
+
+## ⭐ 9. NATURAL-LANGUAGE MCP QUESTIONS
+
+Use these in **Copilot Chat inside VS Code**:
+
+### 🔥 Performance
+
+1. Show me the slowest endpoint in the last 20 minutes.
+2. List the top 5 slowest services.
+3. Which endpoints have p95 latency > 500ms?
+4. What caused the latency spike in the last hour?
+5. Show me traces where checkout took more than 500ms.
+
+### ❗ Errors
+
+1. List endpoints with the highest error rate.
+2. Which service produced the most errors today?
+3. Show me the recent 100 errors grouped by service.
+
+### 📊 Traffic
+
+1. Which service handled the most requests in the last hour?
+2. Show me the busiest endpoints right now.
+3. What are the top 10 endpoints by request volume?
+
+### 🔍 Debugging
+
+1. Explain the cause of the latest latency spike.
+2. Summarize anomalies in the last 30 minutes.
+3. Why is checkout slow today?
+4. Show me traces where frontend took more than 1 second.
+
+
+
+
+
+
+
+
 
 
 
