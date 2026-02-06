@@ -33,3 +33,70 @@ kubectl get pods -A
 5. Copy your **Team API Key**
 
 Dataset name we will use: **otel-demo**
+
+## ⭐ 3. INSTALL OTEL HELM CHART
+### Add OTEL Helm repo
+```bash
+helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
+helm repo update
+```
+### Create namespace
+```bash
+kubectl create namespace otel-demo
+```
+## ⭐ 4. CREATE values.yaml
+Create a file named **values.yaml** with:
+```bash
+opentelemetry-collector:
+  enabled: true
+
+  config:
+    receivers:
+      otlp:
+        protocols:
+          http: {}
+          grpc: {}
+
+    processors:
+      batch: {}
+
+    exporters:
+      otlphttp/honeycomb:
+        endpoint: https://api.honeycomb.io
+        headers:
+          x-honeycomb-team: "<YOUR_API_KEY>"
+          x-honeycomb-dataset: "otel-demo"
+
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlphttp/honeycomb]
+
+        metrics:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlphttp/honeycomb]
+
+        logs:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlphttp/honeycomb]
+```
+Replace <YOUR_API_KEY> with your Honeycomb key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
