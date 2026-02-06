@@ -85,14 +85,45 @@ opentelemetry-collector:
           exporters: [otlphttp/honeycomb]
 ```
 Replace <YOUR_API_KEY> with your Honeycomb key.
+## ⭐ 5. DEPLOY OTEL DEMO APP WITH HELM
+### Install demo + collector
+```bash
+helm upgrade --install otel-demo open-telemetry/opentelemetry-demo \
+  -n otel-demo -f values.yaml
+```
+### Verify pods
+```bash
+kubectl get pods -n otel-demo
+```
+Look for:
 
+- frontend
+- cartservice
+- loadgenerator
+- otel-collector
+## ⭐ 6. EXPLORE THE APP
+### Port-forward frontend
+```bash
+kubectl port-forward -n otel-demo svc/frontend-proxy 8080:8080
+```
+Open browser:
+```bash
+http://localhost:8080
+```
+You should see the OTEL demo storefront UI.
 
+## ⭐ 7. CHECK HONEYCOMB DASHBOARD
 
+1. Open Honeycomb.io
+2. Select dataset: **otel-demo**
+3. Verify:
+    - traces arriving
+    - span waterfalls
+    - latency graphs
+    - service map
+    - error rates
 
-
-
-
-
+Your collector is exporting correctly if you see fresh traces.
 
 
 
