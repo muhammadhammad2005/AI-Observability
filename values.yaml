@@ -15,7 +15,7 @@ opentelemetry-collector:
       otlphttp/honeycomb:
         endpoint: https://api.honeycomb.io
         headers:
-          x-honeycomb-team: "Bt3ahWYUZeo4ooc0LcPmVF"
+          x-honeycomb-team: "<YOUR_API_KEY>"
           x-honeycomb-dataset: "otel-demo"
 
     service:
